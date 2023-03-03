@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics Program</title>
+</head>
+<body>
+    <script>
+        var totalCustomer = 0;
+        var numberOfHours = 4; 
+        var averageOfCustomer;
+
+        for(var i = 1; i <=4; i++){
+            var count = parseInt(prompt(`Enter a number of customers in ${i} hour`));
+            totalCustomer += count;
+        }
+        averageOfCustomer = totalCustomer / numberOfHours;
+        document.write("Total customer : " + totalCustomer + "<br>");
+        document.write("Average of customer : " + averageOfCustomer);
+    </script>
+</body>
+</html>

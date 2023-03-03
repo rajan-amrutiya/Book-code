@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 1</title>
+</head>
+<body>
+    <script>
+        var priceOf2010 = prompt("Enter the price of 2010 : ");
+        var priceOf2011 = prompt("Enter the price of 2011 : ")
+
+        var percentOf2010 = priceOf2010 / 100; 
+        var percentof2011 = priceOf2011 / 100;
+        
+        function checkPrice(priceOf2010,priceOf2011){
+            if(priceOf2010 > priceOf2011){
+                difference = percentOf2010 - percentof2011;
+            }else{
+                difference = percentof2011 - percentOf2010;
+            }
+            //console.log(difference)
+            return difference;
+        }
+        
+        var difference = checkPrice(priceOf2010, priceOf2011);
+        if(percentof2011 > percentOf2010){
+            document.write("The percentage is increased by " + difference + "%");
+        }else {
+            document.write("The percentage is decreased by "+ difference + "%");
+        } 
+    </script>
+</body>
+</html>

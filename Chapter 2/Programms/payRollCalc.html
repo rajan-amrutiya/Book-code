@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayrollCalc</title>
+</head>
+<body>
+
+    <b>Employee Payroll Calculator</b>
+    <br>
+    
+    <script>
+        var BR = '<br>';
+        var firstName = prompt("Enter a first name : ");
+        var lastName = prompt("Enter a last name: ");
+        var fullName = firstName + " " +lastName;
+        var hoursWorked = parseFloat(prompt("Enter the number of hours worked : "));
+        var wageRate = parseFloat(prompt("Enter the employee's hourly wage : "));
+        
+        var grossPay = hoursWorked * wageRate;
+
+        const FED_RATE = 0.15;
+        const STATE_RATE = 0.034;
+        const COUNTRY_RATE = 0.011;
+        
+        var fedTaxWith = grossPay * FED_RATE;
+        var stateTaxWith = grossPay * STATE_RATE;
+        var countryTAxWith = grossPay * COUNTRY_RATE;
+        
+        var medInsDed = parseFloat(prompt("Enter medical insurance deduction : "));
+        
+        var totDeductions = fedTaxWith + stateTaxWith + countryTAxWith + medInsDed;
+        
+        var netPay = grossPay - totDeductions;
+
+        document.write("Payroll information for : " + fullName + BR);
+        document.write("Hours Worked : " + hoursWorked + BR);
+        document.write("Wage Rate : " + wageRate + BR);
+        document.write("Gross Pay : $" + grossPay + BR);
+        document.write("Federal income tax: $" + fedTaxWith + BR);
+        document.write("State income tax : $" + stateTaxWith + BR);
+        document.write("Country income tax : $" + countryTAxWith + BR);
+        document.write("Medical insurance : $" + medInsDed + BR);
+        document.write("Total deductions : $" + totDeductions + BR);
+        document.write("Net pay : $" + netPay);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 3</title>
+</head>
+<body>
+    <script>
+        var rentPayment= parseInt(prompt("Enter your rent payment amount : "));
+        var food = parseInt(prompt("Enter your food bill amount : "));
+        var utilities = parseInt(prompt("Enter your utilitiea amount : "));
+        var otherPayment = parseInt(prompt("Enter your all other amount : "));
+
+        var totalAmount = rentPayment + food + utilities + otherPayment;
+        document.write("Your total amount : $" + totalAmount.toFixed(2) + "<br>");
+
+        var percentRent = rentPayment / totalAmount;
+        document.write("Percentage of rent : " + percentRent.toFixed(1) + "<br>"); 
+        var percentFood = food / totalAmount;
+        document.write("Percentage of food : " + percentFood.toFixed(1) + "<br>"); 
+        var percentUtilities = utilities / totalAmount;
+        document.write("Percentage of utilities : " + percentUtilities.toFixed(1) + "<br>"); 
+        var percentOtherPayment = otherPayment / totalAmount;
+        document.write("Percentage of otherPayment : " + percentOtherPayment.toFixed(1) + "<br>"); 
+
+    </script>
+</body>
+</html>
