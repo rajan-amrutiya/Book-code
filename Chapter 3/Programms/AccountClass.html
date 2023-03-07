@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <script>
+        class Account{
+            constructor(type, num, fName, lName, bal){
+                this.acctType = type;
+                this.acctNumber = num;
+                this.firstName = fName; 
+                this.lastName = lName;
+                this.balance = bal;
+            }
+
+            display (){
+                document.write(this.acctType + "<br>");
+                document.write(this.acctNumber + "<br>");
+                document.write(this.firstName + "<br>");
+                document.write(this.lastName + "<br>");
+                document.write(this.balance);
+            }
+        }
+               
+        var mySavingAccount = new Account("S",5632327,"RRR","AAA",  2133241322);
+        mySavingAccount.display();
+    </script>
+</body>
+</html>

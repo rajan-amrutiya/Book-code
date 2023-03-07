@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num1 = parseFloat(prompt("Enter a first number : "));
+
+        var squareRoot = Math.sqrt(num1);
+        var absolute = Math.abs(num1);
+        var nextHighest = Math.ceil(num1);
+        var nextLowest = Math.floor(num1);
+
+        document.write("Squareroot : " + squareRoot.toFixed(2) + "<br>");
+        document.write("Absolute : " + absolute + "<br>");
+        document.write("nextHighest : " + nextHighest + "<br>");
+        document.write("nextLowest : " + nextLowest + "<br>");
+
+        var num2 = parseFloat(prompt("Enter a second number : "));
+
+        var higherNum = Math.max(num1,num2);
+        var lowerNum = Math.min(num1,num2);
+
+        document.write("higherNum is : " + higherNum + "<br>");
+        document.write("lowerNum is : " + lowerNum);
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Account{
+            constructor(type, num, fName, lName, bal){
+                this.acctType = type;
+                this.acctNumber = num;
+                this.firstName = fName; 
+                this.lastName = lName;
+                this.acctBal = bal;
+                
+                
+            }
+
+            deposit(amount){
+                this.acctBal = this.acctBal + amount;
+                document.write("The new balance is : " + this.acctBal + "<br>");
+            }
+
+            withdraw(amount){
+                this.acctBal = this.acctBal - amount;
+                document.write("The new balance : " + this.acctBal + "<br>");
+
+            }
+
+            changeName(fName, lName){
+                this.firstName = fName;
+                this.lastName = lName;
+                document.write("The name has been changed to " + this.firstName + " " + this.lastName + "<br>");
+            }
+
+            inquiry(){
+                document.write("The balance is " + this.acctBal + "<br>");
+            }
+
+            displayInfo(){
+                document.write("Account type : " + this.acctType + "<br>");
+                document.write("Account Number : " + this.acctNumber + "<br>");
+                document.write("First Name : " + this.firstName + "<br>");
+                document.write("Last Name : " + this.lastName + "<br>");
+                document.write("Account Balance : " + this.acctBal + "<br>");
+                
+            }
+        }
+
+        var mySavingAccount = new Account("S", 7657231,"adas","wers", 1000);
+        mySavingAccount.deposit(100);
+        mySavingAccount.withdraw(200);
+        mySavingAccount.inquiry();
+        mySavingAccount.displayInfo();
+
+
+    </script>
+</body>
+</html>

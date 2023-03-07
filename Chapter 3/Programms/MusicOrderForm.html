@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Music Deliverd Order Form</h1>
+    <h3>Select your song :</h3>
+    <form>
+        <select id="songChoice">
+            <option>She never loves you</option>
+            <option>Dusk Till Dawn</option>
+            <option>Unstoppable</option>
+            <option>Daku</option>
+        </select>
+
+        <h3>Select your credit card type: </h3>
+        <input type="radio" name="creditCard" id="Visa" value="Visa" />Visa<br>
+        <input type="radio" name="creditCard" id="MasterCard" value="MasterCard" />Master Card<br>
+        <input type="radio" name="creditCard" id="UPI" value="UPI" />UPI<br>
+
+        <h3>Enter your name and e-mail address :</h3>
+        <input type="text" id="firstName" placeholder="First Name"><br>
+        <input type="text" id="lastName" placeholder="Last Name"><br>
+        <input type="text" id="e-mail" placeholder="e-mail address"><br>
+        <br>
+
+        
+        <button onclick="displayOrder()">Display Order</button><br>
+
+        <textarea id="textarea" cols="50" rows="20"></textarea>
+
+
+    </form>
+    <script>
+        function displayOrder() {
+            event.preventDefault()
+            let optionValue = document.getElementById("songChoice").value;
+            //console.log(optionValue);
+            let radioValue = document.querySelector("input[name='creditCard']:checked").value;
+            //console.log(radioValue);
+
+            let firstName = document.getElementById("firstName").value;
+            let lastName = document.getElementById("lastName").value;
+            let eMail = document.getElementById("e-mail").value;
+
+            document.getElementById("textarea").value = `Title : ${optionValue} \n Name : ${firstName} ${lastName} \nE-MAIL : ${eMail} \nPayment Method : ${radioValue}`;
+
+        }
+    </script>
+
+</body>
+
+</html>
