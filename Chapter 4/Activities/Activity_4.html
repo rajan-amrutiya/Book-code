@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const PRICE = 0.99;
+        const SALES_TAX = 0.06;
+        const SHIPPING_RATE = 2.0;
+        let name = prompt("Enter your name: ");
+        let email = prompt("Enter your e-mail address : ");
+        let numOfButtons = parseInt(prompt("Enter a number of buttons you want to order : "));
+
+        let total = PRICE + SALES_TAX + SHIPPING_RATE + (PRICE * numOfButtons);
+
+        document.write(`<b>Your order details</b> <br> Your name : ${name} <br> Your e-mail address : ${email} <br> Total buttons : ${numOfButtons} <br> Sales Tax : ${SALES_TAX} <br> Shipping Rate : ${SHIPPING_RATE} <br> Total Price : ${total.toFixed(2)}`);
+    </script>
+</body>
+</html>

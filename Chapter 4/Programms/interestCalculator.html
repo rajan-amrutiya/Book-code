@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let balance = parseFloat(prompt("Enter the begging balance : "));
+        let intRate = parseFloat(prompt("Enter the annual interest rate as a decimal : "));
+
+        let interest = balance * intRate;
+        balance = balance + interest;
+
+        document.write("Interest for the year : $" + interest + "<br>");
+        document.write("Your new balance is : $" + balance.toFixed(2));
+    </script>
+</body>
+</html>
