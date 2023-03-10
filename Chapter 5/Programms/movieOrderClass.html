@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class movieOrder{
+            
+            constructor(movie, delvryType){
+                this.movieName = movie;
+                this.delType = delvryType;
+                this.moviePrice;
+
+                if(this.delType == "S"){
+                    this.moviePrice = 3.99;
+                }else{
+                    this.moviePrice = 4.99;
+                }
+            }
+
+            displayInfo(){
+                document.write(`Movie Name : ${this.movieName} <br>
+                                Movie Price : ${this.moviePrice}`);
+            }
+            
+            
+
+        }
+       
+        let choice = parseInt(prompt("Enter 1 to order 'STAR WARS'. 2 for 'Fast and Furious'. 3 for 'MARVEL'."));
+        let movie;
+        if (choice == 1){
+            movie = "STAR WARS";
+        }else if(choice == 2){
+            movie = "Fast and Furious";
+        }else{
+            movie = "MARVEL";
+        }
+
+        let delvryType = prompt("Enter S to stream movie OR D to download");
+
+        let myOrder = new movieOrder(movie,delvryType);
+        myOrder.displayInfo();
+
+    </script>
+</body>
+</html>

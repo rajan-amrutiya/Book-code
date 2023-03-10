@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fullName = prompt("Enter your Full Name : ");
+        let numPkgs = prompt("Enter the number of paper towel packages :");
+        let state = prompt("Enter the state to ship to: ");
+
+        if (numPkgs >= 6){
+            var pkgPrice = 2.00;
+        }else{
+            var pkgPrice = 2.50;
+        }
+
+        if (state == "ID"){
+            var shipCost = 0.00;
+        }else{
+            var shipCost = 4.00;
+        }
+
+        let totPkgCost = pkgPrice * numPkgs;
+        let totOrderCost = totPkgCost + shipCost;
+
+        document.write(`<b>Order summary for ${fullName}</b> <br>
+                           Number packages ordered : ${numPkgs} <br>
+                           Price per package : ${pkgPrice} <br>
+                           Subtotal : ${totPkgCost} <br>
+                           Order will be ship to : ${state} <br>
+                           Shipping cost : ${shipCost} <br>
+                           Order total : ${totOrderCost}`);
+    </script>
+</body>
+</html>

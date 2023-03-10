@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let input = parseInt(prompt("Enter cents : " ));
+        if( input < 0 ){
+            document.write("Please enter above 0 cent")
+        }
+        else if(input >= 0 && input <=7){
+            document.write("there is no tax")
+        }else if( input <= 21 ){
+            document.write("tax is 1 cent")
+        }else if( input <= 35){
+            document.write("tax is 2 cents")
+        }else if( input <= 49 ){
+            document.write("tax is 3 cents")
+        }else if( input <= 64){
+            document.write("tax is 4 cents")
+        }else if( input <= 78){
+            document.write("tax is 5 cents")
+        }else if( input <=92){
+            document.write("tax is 6 cents")
+        }else if(input <= 99 ){
+            document.write("tax is 7 cents")
+        }else{
+            document.write("You entered above 1 dollar")
+        }
+
+    </script>
+</body>
+</html>
