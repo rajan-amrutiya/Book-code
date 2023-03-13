@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numCans = parseInt(prompt("Enter number of cans or -1 to quit : "));
+        let totalcans = 0;
+
+        while (numCans != -1) {
+           
+            totalcans = totalcans + numCans;
+            document.write("Total cans so far : " + totalcans + "<br>");
+
+            numCans = parseInt(prompt("Enter number of cans or -1 to quit : "));
+        }
+        document.write("Total cans donated : " + totalcans);
+    </script>
+</body>
+
+</html>

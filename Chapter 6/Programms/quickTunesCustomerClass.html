@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <strong>QuickTunes New Customer Program</strong>
+
+    <script>
+
+        class Customer {
+            constructor(name, addr, city, state, zip, startNum) {
+                
+                this.number = startNum;
+                this.customerName = name;
+                this.customerAddr = addr;
+                this.customerCity = city;
+                this.customerState = state;
+                this.customerZip = zip;
+            }
+            
+            setCustNum(){
+                this.newCustNum = this.number;
+               
+            }
+
+            displayInfo(){
+                document.write(`Customer number #${this.newCustNum} <br> 
+                                Name : ${this.customerName} <br> 
+                                Address : ${this.customerAddr} <br>
+                                City : ${this.customerCity} <br>
+                                State : ${this.customerState} <br>
+                                Zip : ${this.customerZip} <br>`);
+            }
+        }
+
+        let name,addr,city,state,zip;
+        let numNewCusts = 0;
+
+        let startNum = parseInt(prompt("Enter starting customer number : "));
+        
+        
+        let newCustName = prompt("Enter your full name or Q to quit ");
+        
+        while( newCustName != "Q"){
+            numNewCusts++;
+            
+            addr = prompt("Enter customer's address : ");
+            city = prompt("Enter customer's city : ");
+            state = prompt("Enter customer's state : ");
+            zip = prompt("Enter customer's zip code : ");
+    
+            let newCustomer = new Customer(newCustName,addr,city,state,zip, startNum);
+            newCustomer.setCustNum();
+            newCustomer.displayInfo();
+            startNum++;
+            newCustName = prompt("Enter your full name or Q to quit ");
+        }
+        
+        document.write(`New customers added : ${numNewCusts}`)
+    </script>
+</body>
+
+</html>

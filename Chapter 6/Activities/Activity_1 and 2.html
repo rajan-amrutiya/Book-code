@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let totalTemp = 0;
+        let listOfTemperature = [];
+
+        for(day = 1; day <= 5; day++){
+            let temp = parseFloat(prompt(`Enter temperature of day ${day} : `));
+            totalTemp = totalTemp + temp;
+            // console.log(totalTemp);
+            listOfTemperature.push(temp);
+        }
+        let avrgTemp = totalTemp / 5;
+        let lowestTemp = Math.min(...listOfTemperature);
+        let highestTemp = Math.max(...listOfTemperature);
+        
+        document.write(`The average temperature is : ${avrgTemp} <br>
+                        Lowest temperature : ${lowestTemp} <br>
+                        Highest temperature : ${highestTemp}`);
+    </script>
+</body>
+</html>

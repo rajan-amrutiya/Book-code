@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let morningQty = 0;
+        let afternoonQty = 0; 
+        let eveningQty = 0;
+
+        let time = prompt("when did you come to coffee cove -Enter M for morning, A for afternoon, E for evening OR Q for quit ");
+        // let quantity = parseInt(prompt("Enter a quantity of the coffee "));
+        let quantity;
+        while(time != "Q"){
+            quantity = parseInt(prompt("Enter a quantity of the coffee "));
+            switch(time){
+                case "M":
+                    morningQty += quantity;
+                    break;
+                case "A":
+                    afternoonQty += quantity;
+                    break;
+                case "E":
+                    eveningQty += quantity;
+                    break;
+                default:
+                    alert("Please tell us that when you did you come..");
+                    break;
+            }
+            time = prompt("when did you come to coffee cove -Enter M for morning, A for afternoon, E for evening OR Q for quit ");
+
+        }
+        
+        document.write(`Morning : ${morningQty} <br>
+                        Afternoon : ${afternoonQty} <br>
+                        evening : ${eveningQty} `);
+
+
+
+    </script>
+</body>
+</html>
