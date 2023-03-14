@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>It's your money slots</h2>
+    <form name="slots">
+        <input type="text" id="1" size="10" />
+        <input type="text" id="2" size="10" />
+        <input type="text" id="3" size="10" /><br>
+        <br>
+        <input type="button" name="play" value="Play Slots" onclick="playSlots()" /> <br>     
+        <br>
+        <input type="text" name="result" size="24">
+    </form>
+    <script>
+        const TEXT_ARRAY = ["CHERRY", "LEMON", "ORANGE", "LIME", "BANANA"];
+        
+        const RESULT_JACKPOT = "3 of a kind! JACKPOT!";
+        const RESULT_2KIND = "2 of kind! ";
+        const RESULT_NOPRICE = "No price";
+
+        function playSlots(){
+            let random1 = Math.floor(Math.random()*5);
+            let random2 = Math.floor(Math.random()*5);
+            let random3 = Math.floor(Math.random()*5);
+
+            let boxValue1 = TEXT_ARRAY[random1];
+            let boxValue2 = TEXT_ARRAY[random2];
+            let boxValue3 = TEXT_ARRAY[random3];
+ 
+            document.getElementById("1").value = boxValue1;
+            document.getElementById("2").value = boxValue2;
+            document.getElementById("3").value = boxValue3;
+
+            if(random1 == random2 && random1 == random3){
+                document.slots.result.value = RESULT_JACKPOT;
+            }else if(random1 == random2 || random2 == random3){
+                document.slots.result.value = RESULT_2KIND;
+            }else{
+                document.slots.result.value = RESULT_NOPRICE;
+            }
+
+        }
+    </script>
+</body>
+</html>

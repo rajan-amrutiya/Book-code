@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const DISC_PRICE = 4.98   
+        const BOOM_PRICE = 3.98 
+        const REG_SHIP = 5.0
+        let shippingCost;
+
+        let numDiscs = parseFloat(prompt("How many flying discs do you want?"));
+        let numBooms = parseFloat(prompt("How many flying boomrangs do you want?"));
+
+        let totalPurchase = (numDiscs * DISC_PRICE) + (numBooms * BOOM_PRICE);
+
+        if((numDiscs >= 1 && numBooms >= 1) || (numDiscs >= 3 || numBooms >= 3)){
+            shippingCost = 0.0;
+            document.write("Congrats ! Shipping free");
+        }else {
+            shippingCost = REG_SHIP;
+        }
+
+        let totOrder = totalPurchase + shippingCost;
+        document.write(`Total purchase Amount : ${totalPurchase} <br>
+                        Shipping Cost : ${shippingCost} <br>
+                        Total Order : ${totOrder}`);
+    </script>
+</body>
+</html>
