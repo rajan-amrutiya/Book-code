@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function average() {
+            let quantity = parseInt(prompt("How many numbers will you input?"));
+            let index, inputNum;
+            let total = 0;
+            for (index = 1; index <= quantity; index++) {
+                inputNum = parseInt(prompt(`Enter number ${index} : `));
+                total += inputNum;
+            }
+            let avg = total / quantity;
+            console.log(avg);
+            return avg;
+        }
+    </script>
+</head>
+<body>
+    <script>
+        let homework = average();
+        document.write(`The average of homework is ${homework}`);
+    </script>
+
+</body>
+</html>

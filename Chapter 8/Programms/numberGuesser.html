@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function compareNum (userGuess, winningNum){
+            if (userGuess == winningNum){
+                document.write("Congratsss !! You guessed right number ."+ "<br>");
+            }else{
+               
+                if(userGuess < winningNum){
+                    document.write("You guessed lower number"+ "<br>");
+                }else{
+                    document.write("You guessed higher number" + "<br>");
+                }
+            }
+        }
+
+        let index = 1;
+        let correct = false;
+        let userGuess, compare;
+        let winningNum = parseInt(Math.random() * 10);
+        console.log(winningNum);
+        while ( index <= 3 && !(correct)){
+            userGuess = parseInt(prompt("Guess the number :"));
+            compare = compareNum(userGuess, winningNum);
+            index += 1;
+        }
+    </script>
+</body>
+</html>

@@ -13,9 +13,9 @@
 
         if(absence > 5){
             document.write("Fail");
-        }else if(absence >= 0 || absence <= 2){
-            percentage += 0.03; 
-            document.write("Your percentsge is Adjusted by 3%");
+        }else if(absence >= 0 && absence <= 2){
+            percentage += 3; 
+            document.write(`Your percentsge is Adjusted by 3% and is ${percentage} <br>`);
             if(percentage >= 90 && percentage <= 100){
                 document.write("A Grade");
             }else if(percentage >= 80 && percentage <=89.9){
