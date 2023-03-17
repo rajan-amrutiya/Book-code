@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function displayInfo(){
+            event.preventDefault();
+            let fullName = document.getElementById("name").value;
+            let address = document.getElementById("address").value;
+            let email = document.getElementById("e-mail").value;
+            let city = document.getElementById("city").value;
+            let state = document.getElementById("state").value;
+            let zip = document.getElementById("zip").value;
+
+            let emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            let zipFormat = /[0-9]{6}/
+
+            if(fullName == "" || address == "" || city == "" || state == ""){
+                alert("All information are required.");
+            }
+            if(!(email.match(emailFormat))){
+                alert("Enter a valid e-mail id");
+            }if(!(zip.match(zipFormat))){
+                alert("Enter a valid zip code");
+            }
+
+            document.getElementById("textBox").value = `Full name : ${fullName} 
+                                                        Address : ${address} 
+                                                        E-mail address : ${email} 
+                                                        City : ${city} 
+                                                        State : ${state}
+                                                        Zip : ${zip}`;
+
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Sounds Right Customer Inquiry Form</h2>
+    <hr>
+    <form id="custInfo">
+        <div class="info">
+            <strong>Enter your name, address, and e-mail address .</strong>
+            <br>
+            <br>
+            <label>Full Name : </label> <input type="text" id="name" size="30">
+            <br><br>
+            <label>Address : </label> <input type="text" id="address" size="30">
+            <br><br>
+            <label>E-mail Address : </label> <input type="text" id="e-mail" size="30">
+            <br><br>
+            <label>City :</label> <input type="text" id="city" size="10">
+            
+            <label>State :</label> <input type="text" id="state" size="10">
+            <label>Zip code :</label> <input type="text" id="zip" size="5" max="5">
+            <br><br>
+            <button onclick="displayInfo()">Display Info </button>
+            <br><br>
+            <textarea id="textBox" readonly="true" cols="55" rows="20"></textarea>
+
+            
+        </div>
+    </form>
+</body>
+
+</html>

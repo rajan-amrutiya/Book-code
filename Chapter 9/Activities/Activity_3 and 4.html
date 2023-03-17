@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let choice;
+        do{
+            choice = parseInt(prompt("Enter 1 to Counts the words in sentence " + "\n"
+                            + "Enter 2 to spell a sentence backward " + "\n"
+                            + "Enter 3 to exit ."));
+        if(choice == 1){
+            countWords();
+            break;
+        }else if(choice == 2){
+            spellBackward();
+            break;
+        }else if(choice != 3){
+            alert("Invalid selection ! Enter 1, 2, or 3.");
+        }
+    }while(choice != 3);
+
+        function countWords(){
+            let sentence = prompt("Enter sentence ");
+            let words = sentence.split(" ");
+            let numWords = words.length;
+            document.write(`Total words in this sentence '${sentence}' is : ${numWords}`);
+            
+        }
+        
+        function spellBackward(){
+            let sentence = prompt("Enter sentence ");
+            let index = "";
+            let words = sentence.split(" ");
+            let reverseWords = words.reverse();
+    
+            for (let i of reverseWords){
+                index += i+" ";
+            }
+            document.write(index);
+            
+        }
+    </script>
+</body>
+</html>

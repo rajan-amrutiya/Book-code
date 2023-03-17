@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function displayInfo() {
+            choice = prompt("Enter A for Arithmetic Games" + "\n" + "Enter G for Geography Games" + "\n" + "Enter Q to exit. ");
+            return choice;
+        }
+
+        function arithmeticGames() {
+            
+            do {
+                gameChoice = prompt("Enter A to Play Addition" + "\n" + "Enter S to Play Subtraction" + "\n" + "Enter Q to quit.");
+
+                if (gameChoice == "A") {
+                    playAddition();
+                } else if (gameChoice == "S") {
+                    playSubtraction();
+                } else if (gameChoice != "Q") {
+                    alert("Invalid Seletion ! Enter A, S or Q.");
+                }
+            } while (gameChoice != "Q");
+        }
+
+        function geographyGames() {
+            do {
+                gameChoice = prompt("Enter G to Play guess the country" + "\n" + "Enter N to Play name the capital" + "Enter Q to exit");
+
+                if (gameChoice == "G") {
+                    guessCountry();
+                } else if (gameChoice == "N") {
+                    nameCapital();
+                } else if (gameChoice != "Q") {
+                    alert("Invalid Seletion ! Enter G, N or Q.");
+                }
+            } while (gameChoice != "Q");
+        }
+
+        function playAddition() {
+            num1 = Math.random() * 100;
+            num2 = Math.random() * 100;
+
+            sum = num1 + num2;
+
+            guess = parseInt(prompt("Guess the Sum of Two numbers : "));
+
+            if (guess == sum) {
+                document.write("You Guessed right sum !!");
+            } else {
+                document.write(`Sorry, You are wrong. The correct sum is : ${sum}`);
+            }
+        }
+
+        function playSubtraction() {
+            num1 = Math.random() * 100;
+            num2 = Math.random() * 100;
+
+            subtraction = Math.abs(num1 - num2);
+
+            guess = parseInt(prompt("Guess the Subtraction of Two numbers : "));
+
+            if (guess == subtraction) {
+                document.write("You Guessed right Subtraction !!");
+            } else {
+                document.write(`Sorry, You are wrong. The correct Subtraction is : ${subtraction}`);
+            }
+        }
+
+        function guessCountry() {
+            randomNum = Math.random() * 5;
+            let city, country;
+            switch (randomNum) {
+                case 1:
+                    city = "Hamburg";
+                    country = "Germany";
+                    break;
+                case 2:
+                    city = "Osaka";
+                    country = "Japan";
+                    break;
+                case 3:
+                    city = "Liverpool";
+                    country = "England";
+                    break;
+                case 4:
+                    city = "Rio de Janereio";
+                    country = "Brazil";
+                    break;
+                case 5:
+                    city = "Mombasa";
+                    country = "Kenya";
+                    break;
+            }
+
+            guess = prompt("In which country is the " + city + " located ?");
+
+            if (guess == country) {
+                document.write("Yeahh ! You are right .");
+            } else {
+                document.write(`Sorry ! You are wrong . The correct country is : ${country}`);
+            }
+
+        }
+
+        function nameCapital() {
+            capital, country;
+            randomNum = Math.random() * 5;
+            switch (randomNum) {
+                case 1:
+                    capital = "Kabul";
+                    country = "Afghanistan";
+                    break;
+                case 2:
+                    capital = "Vienna";
+                    country = "Austria";
+                    break;
+                case 3:
+                    capital = "Ottawa";
+                    country = "Canada";
+                    break;
+                case 4:
+                    capital = "Helsinki";
+                    country = "Finland";
+                    break;
+                case 5:
+                    capital = "Lisbon";
+                    country = "Portugal";
+                    break;
+            }
+
+            guess = prompt("What is the capital of " + country + "?");
+
+            if(guess == capital){
+                document.write("Yeahh ! You are right .");
+            }else{
+                document.write(`Sorry ! You are wrong . The correct country is : ${capital}`);
+            }
+        }
+
+        do {
+            choice = displayInfo();
+
+            if (choice == "A") {
+                arithmeticGames();
+            } else if (choice == "G") {
+                geographyGames();
+            } else if (choice != "Q") {
+                alert("Invalid Selection ! Enter A,G or Q");
+            }
+
+        } while (choice != "Q")
+    </script>
+</body>
+
+</html>

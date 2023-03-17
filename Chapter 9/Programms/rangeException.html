@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function rangeExceptions() {
+            try {
+                let num = parseInt(prompt("Enter a number between 1 to 100: "));
+                if (num < 1) {
+                    throw ("Out of range low");
+                } else if (num > 100) {
+                    throw ("Out of range high");
+                }
+                document.write("Number is in the correct range."+ "<br>");
+            }
+            catch (ex) {
+                if (ex == "Out of range low") {
+                    document.write("The number entered is too low" + "<br>");
+                } else if (ex == "Out of range high") {
+                    document.write("The number entered is too high." + "<br>");
+                }
+            }
+        }
+        let more = "Y";
+
+        while (more == "Y"){
+            rangeExceptions();
+             more = prompt("Test another number ?");
+
+        }
+    </script>
+</body>
+
+</html>

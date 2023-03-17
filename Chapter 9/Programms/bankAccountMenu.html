@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function deposit(balance) {
+            let transAmnt = parseFloat(prompt("Enter the amount of the deposit : "));
+            balance += transAmnt;
+            document.write(`Your new balance is : ${balance.toFixed(2)}`);
+            return balance;
+        }
+
+        function withdrawal(balance) {
+            let transAmnt = parseFloat(prompt("Enter the amount of the withdrawal  : "));
+            balance -= transAmnt;
+            document.write(`Your new balance is : ${balance.toFixed(2)}`);
+            return balance;
+        }
+
+        function inquiry(balance) {
+            document.write(`Your current balance is : ${balance.toFixed(2)}`);
+        }
+
+    </script>
+</head>
+
+<body>
+    <script>
+        let currentBalance = 0.00;
+
+        let menuChoice = prompt(` Enter D for deposit
+                                  Enter W for withdraw 
+                                  Enter I for inquiry
+                                  Enter X to exit the menu`);
+            switch (menuChoice) {
+                case "D":
+                    currentBalance = deposit(currentBalance);
+                    break;  
+                case "W":
+                    currentBalance = withdrawal(currentBalance);
+                    break;
+                case "I":
+                    currentBalance = inquiry(currentBalance);
+                    break;
+                case "X":
+                    break;
+                default:
+                    alert("Please Enter D, W, I, X");
+            }
+    </script>
+</body>
+
+</html>

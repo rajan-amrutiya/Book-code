@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function customerService(){
+            do{
+                let subMenuChoice = prompt("Enter A to add a new customer" + "\n" + "Enter C to change customer info" + "\n"+ "Enter D to delete customer" + "\n" + "Enter Q to quit submenu");
+
+                if(subMenuChoice == "A"){
+                    addCustomer();
+                }else if(subMenuChoice == "C"){
+                    changeCustomer();
+                }else if(subMenuChoice == "D"){
+                    deleteCustomer();
+                }else if(subMenuChoice != "Q"){
+                    alert("Enter A, C, D, or Q");
+                }
+            }while(subMenuChoice != "Q")
+        }
+
+        function orderProcessing(){
+            do{
+                let subMenuChoice = prompt("Enter P for placing an order" + "\n" + "Enter I for Invoicing.."+ "\n"+"Enter S for shipping ." + "\n" + "Enter Q to quit this submenu");
+
+                if(subMenuChoice == "P"){
+                    placeOrder();
+                }else if(subMenuChoice == "I"){
+                    invoiceOrder();
+                }else if(subMenuChoice == "S"){
+                    shipOrder();
+                }else if(subMenuChoice != "Q"){
+                    alert("Invalid selection ! Enter P, I, S or Q");
+                }
+            }while(subMenuChoice != "Q")
+        }
+
+        function addCustomer(){
+            document.write("In add Customer function");
+        }
+
+        function changeCustomer(){
+            document.write("In change Customer function");
+        }
+        function placeOrder(){
+            document.write("In  Place Order function");
+        }
+        function invoiceOrder(){
+            document.write("In invoicing function");
+        }
+        function shipOrder(){
+            document.write("In Shipping function");
+        }
+        function deleteCustomer(){
+            document.write("In Delete customer function");
+        }
+    
+
+        do{
+            let menuchoice = prompt("Enter C for Customer Service Menu" + "\n"+ "Enter O for order Processing menu"+"\n" +"Or Enter Q to exit the menu");
+
+            if(menuchoice == "C"){
+                customerService();
+            }else if(menuchoice == "O"){
+                orderProcessing();
+            }else if(menuchoice != "Q"){
+                alert("Invalid selection ! Enter C, O or Q ");
+
+            }
+        }while(menuChoice != "Q")
+    </script>
+</body>
+</html>

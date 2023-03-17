@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let username = prompt(` A valid username should start with an alphabet so, [A-Za-z].
+    
+     All other characters can be alphabets, numbers or an underscore so, [A-Za-z0-9_].
+
+     A valid username length is atleast 8 characters.
+     
+     Enter username : `);
+        let usernameFormat = /^[A-Za-z][A-Za-z0-9_]{7,29}$/;
+
+        while (!(username.match(usernameFormat))) {
+            alert("Enter a valid username");
+            username = prompt("Enter username : ");
+        }
+
+        document.write(`Your username is : ${username}`);
+    </script>
+</body>
+
+</html>
