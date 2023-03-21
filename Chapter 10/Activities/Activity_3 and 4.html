@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        
+        // Sequential search
+        let sqrArray = [];
+        let index, square, d1, d2, comparison, difference;
+        let found = false;
+
+        for (index = 0; index < 500; index++) {
+            square = index * index;
+            sqrArray.push(square);
+        }
+        console.log(sqrArray);
+        let number = parseInt(prompt("Enter a number "));
+        index = 0;
+
+       
+
+        while (index < sqrArray.length && (!(found))) {
+            comparison++;
+            if (sqrArray[index] == number) {
+                found = true;
+                document.write("Number is perfect square .");
+                console.log(sqrArray[index]);
+            }
+            index++;
+        }
+        if (!(found)) {
+            d2 = new Date();
+            document.write("Number is not perfect square .");
+        }
+
+    </script>
+</body>
+
+</html>

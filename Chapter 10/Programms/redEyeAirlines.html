@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h2>RedEye Airlines Flight Information Form</h2>
+
+    <form id="information">
+        <p>Select your starting city <br>
+            <select id="startingCity">
+                <option value="Atlanta">ATLANTA (GA)</option>
+                <option value="Cleveland">CLEVELAND (OH)</option>
+                <!-- <option value="INDIANAPOLIS">INDIANAPOLIS (IN)</option>
+                <option value="LOUISVILLE">LOUISVILLE (KY)</option>
+                <option value="MEMPHIS">MEMPHIS (TN)</option> -->
+            </select>
+
+        </p>
+
+        <p>Select your destination city <br>
+            <select id="destinationCity">
+                <option value="Atlanta">ATLANTA (GA)</option>
+                <option value="Cleveland">CLEVELAND (OH)</option>
+                <option value="Indianapolis">INDIANAPOLIS (IN)</option>
+                <option value="Louisville">LOUISVILLE (KY)</option>
+                <option value="Memphis">MEMPHIS (TN)</option>
+            </select>
+
+        </p>
+        <br><br>
+
+        <button onclick="searchArray()">Find Flights</button>
+        <br><br>
+
+        <textarea id="showData" readonly="true" rows="10" cols="60"></textarea>
+
+    </form>
+
+    <script>
+
+
+        let startCity = ["Atlanta", "Cleveland"];
+
+        let endCity = ["Atlanta", "Cleveland", "Indianapolis", "Louisville", "Memphis"];
+
+        let flightNumber = ["R101", "R102", "R103", "R104", "R105"];
+
+        let pricePerPeerson = [110, 100, 150, 200, 230];
+
+        document.getElementById("showData").value = `Welcome to RedEye Airlines 
+                                                     All flights leave at 2:00 am. `;
+
+        function searchArray() {
+            event.preventDefault();
+            let index;
+
+
+            let fromCityName = document.getElementById("startingCity").value;
+            let toCityName = document.getElementById("destinationCity").value;
+
+            if (fromCityName == toCityName) {
+                alert("Starting and destination city can't be the same .");
+            } else {
+                for (index = 0; index < endCity.length; index++) {
+                    if (endCity[index] == toCityName) {
+                        document.getElementById("showData").value = `${fromCityName} to ${toCityName} 
+                                                            Flight number ${flightNumber[index]} 
+                                                            Price per person : ${pricePerPeerson[index]}`;
+                    }
+                }
+
+
+
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

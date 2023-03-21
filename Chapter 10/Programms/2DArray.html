@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let weekArray = [];
+
+        const WEEKS = 3;
+        const WEEKDAYS = 7;
+        let weekIndex, daysIndex, temperature;
+
+        for(weekIndex = 0; weekIndex < WEEKS; weekIndex++){
+            let week = [];
+            for(daysIndex = 0; daysIndex < WEEKDAYS; daysIndex++){
+                temperature = parseInt(prompt("Enter the temperature of Week " + (weekIndex + 1) + " and Day " +(daysIndex + 1)));
+                week.push(temperature);
+            }
+            weekArray.push(week);
+        }
+        console.log(weekArray);
+
+        for (let index = 0; index < 3; index++){
+            document.write("Temperature for WEEK " + (index + 1) + ":" );
+                                                for(daysIndex = 0; daysIndex < WEEKDAYS; daysIndex++){
+                                                    document.write(` ${weekArray[index][daysIndex]} `);
+                                                }
+                 document.write("<br>");
+        }
+        
+    </script>
+</body>
+</html>

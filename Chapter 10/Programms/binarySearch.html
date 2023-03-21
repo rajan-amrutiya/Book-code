@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let searchNumber = parseInt(prompt("Enter the number that you want to search."));
+
+        const SIZE = 100;
+        let low = 0;
+        let high = SIZE;
+        let found = false;
+        let array = [];
+        let count = 0;
+        for(let i = 1; i <= 100; i++){
+            array.push(i);
+        }
+        // console.log(array);
+
+        while(low <= high &&(!(found))){
+            let index = Math.floor((high + low)/2);
+            console.log(index)
+            if (array[index] == searchNumber){
+                found = true;
+                document.write("Match found at " + index + "<br>");
+            }else{
+                if(array[index] > searchNumber){
+                    high = index - 1;
+                }else{
+                    low = index + 1;
+                }
+            }
+            count++;
+        }
+        document.write("Number of comparison is : " + count);
+        if(!(found)){
+            document.write("Sorry, no match found");
+        }
+    </script>
+</body>
+</html>

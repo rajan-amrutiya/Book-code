@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Binary search
+        let sqrArray = [];
+        const SIZE = 500;
+        let low = 0 ;
+        let high = SIZE;
+        let found = false;
+        let index,square;
+
+        for (index = 0; index < 500; index++) {
+            square = index * index;
+            sqrArray.push(square);
+        }
+
+        let number = parseInt(prompt("Enter a number "));
+        
+
+        while(low <= high && (!(found))){
+            let mid= Math.floor((low + high)/2);
+            if(sqrArray[mid] == number){
+                found = true;
+                document.write("Number is a perfect square .");
+            }else{
+                // console.log("khgcx");
+                if(sqrArray[mid] > number){
+                    high = mid - 1;
+                }else{
+                    low = mid + 1;
+                }
+                
+            }
+        }
+
+        if(!(found)){
+            document.write("Number is not a perfect square ");
+        }
+    </script>
+</body>
+</html>
