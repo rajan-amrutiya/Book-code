@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="mailInfo">
+        <label>Last Name : </label><input type="text" id="lastName" />
+        <br><br>
+        <label>First Name : </label><input type="text" id="firstName" />
+        <br><br>
+        <label>City : </label><input type="text" id="city" />
+        <br><br>
+        <label>State : </label><input type="text" id="state" />
+        <br><br>
+        <label>Record </label> <input type="text" id="record" value="1" size="2" min="2"> <button onclick="goTo()">Go
+            To</button>
+        <br><br><br>
+
+        <button onclick="firstRecord()" id="first">First</button>
+        <button onclick="previousRecord()" id="first">Previous</button>
+        <button onclick="next()" id="first">Next</button>
+        <button onclick="last()" id="first">Last</button>
+        <br><br>
+
+        <label>Current record : </label> <input type="text" id="currentRecord" readonly="true" size="2" />
+    </form>
+
+    <script>
+        let lastName = ["Patel","Sharma","Varma","Shaikh","Torretto"];
+        let firstName = ["Ram","Prem","Amit","Ahmed","Dominic"];
+        let cityName = ["Ahmedabad","Surat","Rajkot","Vadodara","Anand"];
+        let state = ["Gujarat"];
+        let goto;
+        let current = 0;
+        let index = 0;
+            display();
+            function goTo(){
+                event.preventDefault();
+                goto = document.getElementById("record").value - 1;
+                current = goto
+                display(goto);
+
+                if(goto > 5 || goto < 0){
+                    alert("Enter a record number between 1 to 5");
+                }
+            }
+            function display(index = 0){
+                
+                document.getElementById("lastName").value = lastName[index];
+                document.getElementById("firstName").value = firstName[index];
+                document.getElementById("city").value = cityName[index];
+                document.getElementById("state").value = state[0];
+                document.getElementById("currentRecord").value = current + 1;
+
+            }
+            function firstRecord(){
+                event.preventDefault();
+                if(current == 0){
+                    return alert("You are at first record.");
+                }
+                current = 0;
+                display();
+            }
+            function previousRecord(){
+                event.preventDefault();
+                if(current == 0){
+                   return alert("You are at first record.");
+                }
+            
+                current--;
+                display(current);
+            }
+            function next(){
+                event.preventDefault();
+                if(current == 4){
+                    return alert("You are at last record.");
+                }
+                current++;
+                display(current);
+            }
+            function last(){
+                event.preventDefault();
+                if(current == 4){
+                    return alert("You are at last record");
+                }
+                current = 4;
+                display(4);
+            }
+    </script>
+</body>
+
+</html>

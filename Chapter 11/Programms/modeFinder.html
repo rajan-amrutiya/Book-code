@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let numbers = parseInt(prompt("How many numbers will you enter? "));
+        let numbersEntered = [];
+        let index = 0;
+        let count = 0;
+
+        for (index; index < numbers; index++) {
+            input = parseInt(prompt("Enter a number "));
+            numbersEntered.push(input);
+
+        }
+        let current = 0;
+
+        for (let index = 0; index < numbersEntered.length; index++) {
+            current = numbersEntered[index];
+            for (let j = index + 1; j < numbersEntered.length; j++) {
+                if(current == numbersEntered[j]) {
+                    console.log("aave")
+                    count++;
+                }
+            
+            }
+            // console.log(current);
+        }
+        console.log(numbersEntered);
+        console.log(count);
+
+
+    </script>
+</body>
+
+</html>

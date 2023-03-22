@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let msg = "JavaScript says the variable = ";
+
+        let inputText = prompt("Enter a number and press entero");
+        document.write(`You entered : ${inputText} \n`);
+
+
+        if(inputText == null){
+            document.write(`${msg} Null \n`);
+
+        }
+        if(inputText == ""){
+            document.write(`${msg} An empty string \n`); 
+        }
+        if(isNaN(inputText)){
+            document.write(`${msg} NaN \n`);
+        }
+
+        let inputNumber = parseFloat(inputText);
+        document.write("Your entry converted into a number is :" + inputNumber + "<br>");
+
+        if(inputNumber == null){
+            document.write(`${msg} Null \n`);
+        }
+        if(inputNumber == ""){
+            document.write(`${msg} An empty string \n`); 
+        }
+        if(isNaN(inputNumber)){
+            document.write(`${msg} NaN \n`);
+        }
+    </script>
+</body>
+</html>
